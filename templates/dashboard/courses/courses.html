@@ -1,0 +1,32 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class = "bread-crumb"> 
+        <div class = "bread-crumb-container">
+            <a href="{% url 'courses' %}">Courses</a> 
+        </div>
+    </div>
+<div class = "courses-container">
+    <div class = "courses-content"> 
+        <ul>
+            <li><a href="{% url 'unreal' %}">Unreal</a></li>
+            <li><a href="{% url 'photoshop' %}">Photoshop</a></li>
+            <li><a href="#">Unity</a></li>
+            <li><a href="#">C++</a></li>
+            <li><a href="#">Blender</a></li>
+            <li><a href="#">Unreal</a></li>
+            <li><a href="#">Photoshop</a></li>
+            <li><a href="#">Unity</a></li>
+            <li><a href="#">C++</a></li>
+            <li><a href="#">Blender</a></li>
+            <li><a href="#">Unreal</a></li>
+            <li><a href="#">Photoshop</a></li>
+            <li><a href="#">Unity</a></li>
+            <li><a href="#">C++</a></li>
+            <li><a href="#">Blender</a></li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

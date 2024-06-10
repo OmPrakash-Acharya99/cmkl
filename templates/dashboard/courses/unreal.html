@@ -1,0 +1,36 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+{% load embed_video_tags %}
+{% block content %}
+<!--nav bar ends-->
+<div class="bread-crumb"> 
+    <div class="bread-crumb-container"> 
+        <a href="{% url 'courses' %}">Courses >> </a> 
+        <a href="{% url 'unreal' %}">Introduction to Unreal >> </a> 
+    </div>
+</div>
+<div>              
+    <div class="unreal-container">  
+        <div class="unreal-content">
+            {% for training_video in training_videos %}
+                {% if training_video.Title|lower == 'introduction to unreal' %}
+                    <div class="training-video">
+                        <div class="title-button-container">
+                            <h1>{{ training_video.Title }}</h1>
+                            <a href="{% url 'photoshop' %}" class="next-button">Next >> </a> <!-- Add the appropriate URL here -->
+                        </div>
+                        <br>
+                        <p>{{ training_video.descriptions }}</p><br>
+                        <embed src="{{ training_video.pdf_field.url }}" type="application/pdf" margin="10px" width="100%" height="800px" />
+                        <br><br>
+                        <h1>Watch {{ training_video.Title }} video below</h1><br>
+                        <div class="video-container">
+                            {% video training_video.Video_URL %}
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

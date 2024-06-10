@@ -1,0 +1,67 @@
+.bread-crumb {
+  background-color: rgb(186, 204, 204);
+  margin-left: 220px;
+  margin-top: 8px;
+  height: 30px;
+  display: flex;
+  list-style: none;
+  border-radius: 4px;
+}
+
+.bread-crumb .bread-crumb-container {
+  display: flex;
+}
+
+.bread-crumb-container a {
+  text-decoration: none;
+  color: #2815b4;
+  padding: 5px 10px;
+}
+
+.content-container {
+  position: fixed;
+  top: 50%;
+  left: 23%;
+  border-radius: 4px;
+  transform: translate(-50%, -50%);
+  height: 85vh;  /* 85% height of viewport */
+  width: 15%;  /* 15% width of viewport */
+  background-color: rgb(204, 32, 46);
+  margin: 2px;
+  padding: 2px;
+  overflow-y: auto;  /* Enable vertical scrolling */
+}
+
+/* Hide scrollbar for Webkit browsers */
+.content-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.content-container {
+  scrollbar-width: none;  /* Firefox */
+}
+
+.content-content {
+  height: 100%;  /* Full height to ensure scrolling */
+  width: 100%;  /* Full width of the container */
+}
+
+.content-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.content-content ul li {
+  padding: 10px;  /* Adjusted padding for better spacing */
+}
+
+.content-content ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+.content-content ul li a:hover {
+  color: rgb(241, 89, 51);
+}

@@ -1,0 +1,40 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+
+{% block content %}
+<!--nav bar ends-->
+    <div class = "bread-crumb"> 
+        <div class = "bread-crumb-container"> 
+            <a href="{% url 'tools' %}">Tools > </a> 
+            <a href="{% url 'content1' %}">Game Engine ></a> 
+            <a href="{% url 'item1' %}">Unity</a> 
+        </div>
+    </div>
+<div>              
+    <div class="item1-container">  
+                <div class="item1-content">
+                    {% for tool in tools %}
+                    {% if tool.name|lower == 'unity'|lower %}
+                    <div class="item1-logo">
+                        <img src="https://www.google.com/s2/favicons?domain={{ tool.Website_link }}&sz=128" alt="Website Logo">
+                        <h1>{{tool.name}}</h1>
+                    </div> 
+                    <br><td>{{ tool.descriptions }}</td><br>
+                   <br><h4>Platform: {{ tool.Platforms }}</td></h4>
+                       <h4>Lisence: <td>{{ tool.License }}</td></h4>
+                       <h4>Website Link: <a href="{{ tool.Website_link }}" target="_blank">{{ tool.Website_link }}</a></h4>
+                       <h4>Download Link: <a href="{{  tool.download_link }}"target="_blank">{{ tool.download_link }}</a></h4><br>
+                       <h4>Tutorial Link: <a href="{{  tool.download_link }}"target="_blank">{{ tool.download_link }}</a></h4><br>
+                       <h4>PDF <a href="{% url 'unreal' %}"target="_blank">Goto Course</a>            
+                    {% endif %} 
+                    
+                    {% endfor %}
+                    <br>
+                    <br>
+                       <!---<iframe width="420" height="345" src="#">
+                        </iframe>--> 
+                </div>
+        
+        </div>    
+ </div>
+{% endblock %}

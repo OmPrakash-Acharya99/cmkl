@@ -1,0 +1,26 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class = "bread-crumb"> 
+        <div class = "bread-crumb-container">
+            <a href="{% url 'tools' %}">Tools</a> 
+        </div>
+    </div>
+
+    <div class="tools-container">
+        <div class="tools-content">
+            <ul>
+                <li><a href="{% url 'content1' %}">Game Engine</a></li>
+                <li><a href="{% url 'AI_Digital_tools' %}">AI Digital tools</a></li>
+                <li><a href="#">Code Editor</a></li>
+                <li><a href="#">2D Graphics </a></li>
+                <li><a href="#">3D Graphics </a></li>
+                <li><a href="#">Music Creation</a></li>
+                <li><a href="#">Sound Effect</a></li>
+
+            </ul>
+        </div>
+    </div>
+{% endblock %}

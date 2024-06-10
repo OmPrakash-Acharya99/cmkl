@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Center aligning the container */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Styling the button */
+        input[type="button"] {
+            background-color: blue; /* Blue background color */
+            color: white; /* White text color */
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        /* Styling the alert box */
+        .alert-box {
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+    </style>
+    <script type="text/javascript">
+        function show_alert() {
+            alert("An email has been sent with instructions to verify your email");
+        }
+    </script>
+</head>
+<body>
+    <div class="alert-box">
+        <input type="button" onclick="show_alert()" value="Show alert box" />
+    </div>
+</body>
+</html>

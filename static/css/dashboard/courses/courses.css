@@ -1,0 +1,51 @@
+.courses-container {
+  position: fixed;
+  top: 50%;
+  left: 23%;
+  border-radius: 4px;
+  transform: translate(-50%, -50%);
+  height: 85vh;  /* 85% height of viewport */
+  width: 15%; /* 15% width of viewport */
+  background-color: rgb(204, 32, 46);
+  margin: 2px;
+  padding: 2px;
+  overflow-y: auto;
+}
+
+/* Hide scrollbar for Webkit browsers */
+.courses-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.courses-container {
+  scrollbar-width: none; /* Firefox */
+}
+
+.courses-content {
+  display: flex;
+  align-items: center;
+}
+
+.courses-content ul {
+  list-style: none; /* Removes bullet points from the list */
+  padding: 0; /* Removes padding */
+  margin: 0; /* Removes margin */
+  justify-content: center; /* Centers the list items horizontally in the ul */
+  align-items: center; /* Aligns list items vertically */
+  gap: 10px; /* Optional: Adds space between items */
+}
+
+.courses-content ul li {
+  padding: 20px; /* Adds padding to each link for better touch */
+}
+
+.courses-content ul li a {
+  text-decoration: none; /* Removes underline from links */
+  color: white; /* Set the color of the text */
+}
+
+.courses-content ul li a:hover {
+  text-decoration: none; /* Removes underline from links */
+  color: rgb(241, 89, 51); /* Set the color of the text */
+}

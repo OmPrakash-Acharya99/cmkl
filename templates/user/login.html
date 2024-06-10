@@ -1,0 +1,58 @@
+{% extends 'dashboard/base.html' %}
+
+{% load crispy_forms_tags %}
+{% load socialaccount %} {# Make sure to add this for social account functionality #}
+{% block content %}
+<div class="login-container">
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <h1>Login Page</h1>
+        <div class="message-box">
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <div class="login-content">
+            <label for="id_username">Email</label><br> 
+           <input type="text" id="id_username" name="username" class="login-control" required placeholder="youremail@cmkl.ac.th"> 
+        </div>
+        <div class="login-content">
+             <label for="id_password">Password</label><br> 
+           <input type="password" id="id_password" name="password" class="login-control" required> 
+        </div>
+        <div>
+            <a href="{% provider_login_url 'google' %}">
+                <img src="https://www.google.com/images/branding/product/1x/gsa_android_144dp.png" alt="Google logo" style="width:20px; height:20px; vertical-align:middle; margin-right:8px;">
+                Login with Google (Recommended)
+            </a>            
+        </div>
+        <input type="submit" value="Login" class="btn"> 
+    </form>
+</div>
+{% endblock %}
+
+
+
+
+
+<!--{% load socialaccount %} //make sure to add this
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;"> My google OAuth Project </h1>
+    {% if user.is_authenticated %}
+    <p>Welcome. You are logged in as {{user.username}} </p>
+    {% else %}
+    <a href="{% provider_login_url 'google' %}">Login with Google</a>
+    {% endif %}
+</body>
+</html>

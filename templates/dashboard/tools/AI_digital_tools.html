@@ -1,0 +1,39 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+
+{% block content %}
+<!--nav bar ends-->
+
+    <div class = "bread-crumb"> 
+            <div class = "bread-crumb-container">
+                <a href="{% url 'tools' %}"> Tools ></a> 
+                <a href="{% url 'AI_Digital_tools' %}">AI DigitalTools</a> 
+            </div>
+    </div>
+     <!--Lists to diaplay on AI digital tool page-->
+    <div class="AI_tools-container">
+            <div class="AI_tools-content">
+                <ul>
+                    <li><a href="#">Sora</a></li>
+                    <li><a href="#">Luma</a></li>
+                    <li><a href="#">Move AI</a></li>
+                    <li><a href="#">Rokoko Vision</a></li>
+                    <li><a href="#">Polycam</a></li>
+                    <li><a href="#">Image Creator</a></li>
+                    <li><a href="#">Sticker Creator</a></li>
+                    <li><a href="#">Design Creaator </a></li>
+                    <li><a href="#">Brank kit Creator</a></li>
+                    <li><a href="#">DALL - E</a></li>
+                    <li><a href="#">Midjourney</a></li>
+                    <li><a href="#">Soundraw</a></li>
+                    <li><a href="#">Scenario</a></li>
+                    <li><a href="#">Promeanthean AI</a></li>
+                    <li><a href="#">Ludo.ai</a></li>
+                    <li><a href="#">Plask Motion</a></li>
+                    <li><a href="#">Synthesia</a></li>
+                    <li><a href="#">Fliki</a></li>
+                    <li><a href="#">Suno</a></li>                
+                </ul>
+            </div>
+    </div>
+{% endblock %}

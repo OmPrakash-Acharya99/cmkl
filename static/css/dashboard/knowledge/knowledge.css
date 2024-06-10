@@ -1,0 +1,40 @@
+.knowledge-container{
+  position: fixed;
+  top: 50%;
+  left:23%;
+  border-radius: 3px;
+  transform: translate(-50%, -50%);
+  height: 100vh;  /* 80% height of viewport */
+  width:15%;/* 20% width of viewport */
+  background-color: rgb(204, 32, 46);
+  margin:2px;
+  padding: 2px;
+}
+
+.knowledge-content {
+  display: flex;
+  align-items: center;
+}
+
+.knowledge-content ul {
+  list-style: none; /* Removes bullet points from the list */
+  padding: 0; /* Removes padding */
+  margin: 0; /* Removes margin */
+  justify-content: center; /* Centers the list items horizontally in the ul */
+  align-items: center; /* Aligns list items vertically */
+  gap: 10px; /* Optional: Adds space between items */
+}
+
+.knowledge-content ul li {
+  padding: 20px; /* Adds padding to each link for better touch */
+}
+
+.knowledge-content ul li a {
+  text-decoration: none; /* Removes underline from links */
+  color:white; /* Set the color of the text */
+}
+
+.knowledge-content ul li a:hover{
+text-decoration: none; /* Removes underline from links */
+color:rgb(241, 89, 51); /* Set the color of the text */
+}

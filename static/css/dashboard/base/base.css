@@ -1,0 +1,40 @@
+.logout-contents {
+  height: 100%;
+  width: 100%; /* Ensure it takes full width of its parent */
+}
+
+.logout-box {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+
+.alert {
+  display: flex; /* Use Flexbox for horizontal alignment */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  position: relative;
+  background-color: rgb(7, 72, 7); /* Background color */
+  color: white; /* Font color */
+  padding: 50px 30px; /* Increase padding for larger size, more height */
+  border-radius: 40px;
+  max-width: 800px; /* Increase max-width for larger size */
+  text-align: center;
+  margin: auto; /* Centering the alert box */
+  font-size: 20px; /* Increase font size */
+}
+
+.closebtn {
+  position: absolute;
+   /* Center vertically */
+  transform: translateY(-50%); /* Adjust to the vertical center */
+  right: 25px; /* Adjust position for better visibility */
+  color: rgb(39, 9, 186);
+  font-size: 50px; /* Increase font size */
+  cursor: pointer;
+}
+
+.closebtn:hover {
+  color: rgb(157, 13, 13);
+}

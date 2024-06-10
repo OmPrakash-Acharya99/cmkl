@@ -1,0 +1,25 @@
+.home-container {
+  background-color: rgb(186, 204, 204);
+  height : 650px;
+  width : 1050px;
+  margin-left: 220px;
+  margin-top: 20px;
+  border-radius: 4px;
+  position: fixed;
+  overflow-y: auto;
+
+}
+
+.home-content{
+  width: 98%; /* Maintain most of the available width */
+  margin-left: 10px;
+  margin-top: 10px;
+  border-radius: 4px;
+  overflow-y: auto;
+  background-color: whitesmoke;
+  padding: 15px; /* Add some padding */
+  font-family: Arial, sans-serif; /* Choose a readable font */
+  font-size: 16px; /* Set a suitable font size */
+  line-height: 1.5; /* Improve spacing between lines */
+  overflow-y: auto;
+}
