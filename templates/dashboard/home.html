@@ -1,24 +1,27 @@
 {% extends 'dashboard/base.html' %}
-{% load static %}
-{% load socialaccount %}
 
-{% if user.is_authenticated %}
-    {% block content %}
-        <div class="home-container">  
-            <div class="home-content">
-                <div class="item1-logo"><h1>A General User Guidance for Using Knowledge HUB @ CMKL</h1></div>
-                &nbsp; 
-                <p>
-                    This is a general guide for accessing the website Knowledge HUB, CMKL. The user layout of the website is generally divided into three different parts: tools, courses, and knowledge.
-                </p>  
-                &nbsp; 
-                <p>
-                This is the second paragraph.
-                </p>                     
-                
-            </div>
-        </div>    
-    {% endblock %}
-{% else %}
-    <a href="{% provider_login_url 'google' %}">Login with Google</a>
-{% endif %}
+{% block content %}
+    <div class="home-container">
+        <div class="home-content">
+            {% if user.is_authenticated %}
+                <h2>Home Page</h2>
+                {% if notifications %}
+                    <ul>
+                        {% for notification in notifications %}
+                            <li {% if not notification.is_read %} class="unread"{% endif %}>
+                                {{ notification.message }}
+                                {% if not notification.is_read %}
+                                    <a href="{% url 'mark_as_read' notification.id %}">Mark as read</a>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>General Guidance for Users</p>
+                {% endif %}
+            {% else %}
+                <p>Please log in to view notifications.</p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

@@ -57,3 +57,27 @@ def item1(request):
         'tools': tools,
     }
     return render(request, 'dashboard/tools/item1.html', context)
+
+
+
+# views.py in your main app
+## this views are for the notifications when the user uploads new items in the database
+
+from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib.auth.decorators import login_required
+from .models import Notification
+
+
+from .models import Notification
+@login_required
+@login_required
+def notifications_view(request):
+    notifications = request.user.notifications.all().order_by('-created_at')
+    return render(request, 'dashboard/notifications.html', {'notifications': notifications})
+
+@login_required
+def mark_as_read(request, notification_id):
+    notification = get_object_or_404(Notification, id=notification_id, user=request.user)
+    notification.is_read = True
+    notification.save()
+    return redirect('notifications')

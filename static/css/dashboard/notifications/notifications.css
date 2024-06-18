@@ -1,0 +1,48 @@
+.notifications-container {
+    background-color: rgb(186, 204, 204);
+    height: 650px;
+    width: 1050px;
+    margin-left: 220px;
+    margin-top: 20px;
+    border-radius: 4px;
+    position: fixed;
+    overflow-y: auto;
+}
+
+.notifications-content {
+    width: 98%;
+    margin-left: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+    overflow-y: auto;
+    background-color: whitesmoke;
+    padding: 15px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+.notifications-content h2 {
+  text-align: center;
+  margin-top: 10px; /* Optional: Adjust the top margin as needed */
+}
+
+
+.notification-item {
+    background-color: rgb(123, 123, 213);
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.notification-item.unread {
+    font-weight: bold;
+}
+
+.mark-as-read {
+    display: inline-block;
+    margin-left: 10px;
+    color: lightgray;
+    text-decoration: underline;
+    cursor: pointer;
+}

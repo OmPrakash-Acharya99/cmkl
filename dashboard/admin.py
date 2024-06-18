@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Tools, Training_video  # Import your models
+from .models import Tools, Training_video,Notification  # Import your models
 from django.utils.html import format_html  # Import for formatting HTML
 
 # Custom admin class for Tools model
@@ -22,6 +22,14 @@ class Training_videoAdmin(admin.ModelAdmin):
     
     pdf_field.short_description = 'PDF Link'
 
+# Custom admin class for Notification model
+class NotificationAdmin(admin.ModelAdmin):
+    list_display = ('user', 'message', 'created_at', 'is_read')
+    search_fields = ('user__email', 'message')
+    list_filter = ('is_read', 'created_at')
+    
+    
 # Register your models and custom admin classes
 admin.site.register(Tools, ToolsAdmin)
 admin.site.register(Training_video, Training_videoAdmin)
+admin.site.register(Notification, NotificationAdmin)

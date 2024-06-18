@@ -7,7 +7,9 @@ urlpatterns = [
 
     # Path to the home page and it requires login.
     path('home/', views.home, name='home'),
-
+    # urls for notificatiosn
+    path('notifications/', views.notifications_view, name='notifications'),
+    path('notifications/read/<int:notification_id>/',views. mark_as_read, name='mark_as_read'),
     # Path to the knowledge page and it requires login.
     path('knowledge/', views.knowledge, name='knowledge'),
 

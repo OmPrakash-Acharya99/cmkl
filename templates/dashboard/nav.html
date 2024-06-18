@@ -10,11 +10,16 @@
     </div>
     <ul>
         <li><a class="active" href="{% url 'home' %}"><i class="fas fa-home"></i>Home</a></li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'notifications' %}"><i class="fas fa-bell"></i>Notifications
+                <span id="unread-count" class="badge badge-pill badge-danger"></span>
+            </a>
+        </li>
         <li><a href="{% url 'tools' %}"><i class="fas fa-tools"></i>Tools</a></li>
         <li><a href="{% url 'courses' %}"><i class="fas fa-book"></i>Courses</a>
         </li>
-        <li><a href="{% url 'knowledge' %}"><i class="fas fa-lightbulb"></i>Knowledge</a></li>
-        <li><a href="#"><i class="fas fa-map-marker-alt"></i>Map</a></li>
+        <!--<li><a href="{% url 'knowledge' %}"><i class="fas fa-lightbulb"></i>Knowledge</a></li> -->
+       <!--- <li><a href="#"><i class="fas fa-map-marker-alt"></i>Map</a></li> -->
         {% if user.is_authenticated %}
             <li><a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
             {% if user.is_staff and user.is_superuser %}
@@ -22,18 +27,18 @@
             {% endif %}
         {% else %}
             <li><!--<a href="{% url 'login' %}"><i class="fas fa-sign-in-alt">-->
-                <a href="{% provider_login_url 'google' %}">
+                <a href="{% provider_login_url 'google' %}"> 
             </i>Login</a></li>
         {% endif %}
     </ul>
     
     
     <!--Social media links-->
-    <div class="social_media">
+    <!--<div class="social_media">
         <a href="https://www.facebook.com/CMKLUniversity/"><i class="fab fa-facebook-f"></i></a>
         <a href="https://twitter.com/CMKLUniversity/"><i class="fab fa-twitter"></i></a>
         <a href="https://www.instagram.com/cmkluniversity/"><i class="fab fa-instagram"></i></a>
         <a href="https://www.cmkl.ac.th/"><i class="fas fa-globe"></i></a>
-    </div>
+    </div> -->
     
 </div>

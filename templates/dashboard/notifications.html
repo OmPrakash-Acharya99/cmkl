@@ -1,0 +1,39 @@
+{% extends 'dashboard/base.html' %}
+
+{% block content %}
+    <div class="notifications-container">
+        <div class="notifications-content">
+            {% if user.is_authenticated %}
+                <h2>Notifications</h2>
+                {% if notifications %}
+                    <ul id="notifications-list">
+                        {% for notification in notifications %}
+                            {% if not notification.is_read %}
+                                <li class="notification-item">
+                                    {{ notification.message }}
+                                    <a href="{% url 'mark_as_read' notification.id %}" class="mark-as-read">Mark as read</a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                    <span id="unread-count" class="badge badge-pill badge-danger"></span>
+                {% else %}
+                    <p>No notifications to display.</p>
+                {% endif %}
+            {% else %}
+                <p>Please log in to view notifications.</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            updateUnreadCount();
+        });
+
+        function updateUnreadCount() {
+            var unreadCount = document.querySelectorAll('#notifications-list li').length;
+            document.getElementById('unread-count').innerText = unreadCount > 0 ? '+' + unreadCount : '';
+        }
+    </script>
+{% endblock %}
